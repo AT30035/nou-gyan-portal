@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOU E-Gyan Portal</title>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" />
+  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link href="{% static 'images/laga.jpg' %}" rel="icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+.icon div a i:hover{
+          padding: 15px;
+          color: red;
+
+          
+        }
+div ul li a:hover{
+  color: red;
+}
+.imgra img{
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+
+
+
+
+      </style>
+</head>
+
+
+
+
+
+
+<body>
+  <div class="container">
+
+    <div class="py-2" style=" display: flex; ">
+      <img src="{% static 'images/11.png' %}" style="height: 70px ;width: 80px;" class="me-2">
+      <p class="mt-3 ms-5"><b>Nalanda Open University is a State Open University duly established under the Act of Bihar Government and is
+          also recognized by Distance Education Council, IGNOU, Maidan Garhi, New Delhi.</b></p>
+    </div>
+  </div>
+
+  <div class="row bg-success text-light">
+    <div class="col-sm-4  " style="text-align: center; color: white;"><b><a style="color: white;"
+          href="tel:+918318561647"><i class="bi bi-telephone-forward"> &nbsp Contact no 8318561647</i></b></a></div>
+    <div class="col-sm-4" style="text-align: center; color: white;"><b><a style="color: white;"
+          href="mailto:rt691343@gmail.com"><i class="bi bi-envelope-at">&nbsp;Email us rt691343@gmail.com</i></b></a>
+    </div>
+    <div class="col-sm-4" style="text-align: center; color: white;"><b>Follow us :-></b>&nbsp; &nbsp; &nbsp;<a
+        style="color: white;" href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a>&nbsp; &nbsp;
+      &nbsp;</i><a style="color: white;" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a></i>&nbsp;
+      &nbsp; &nbsp;</i><a style="color: white;" href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a></i>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><b>Nalanda Open University</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'nouapp:index' %}"><b>Home</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'nouapp:aboutus' %}"><b>Aboutus</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'nouapp:registration' %}"><b>Registration</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'nouapp:login' %}"><b>Login</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'nouapp:contactus' %}"><b>Contactus</b></a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div id="carouselExampleIndicators" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <h3 style="color: blue; background-color: rgb(206, 201, 195);">
+        <marquee onmouseover="stop();" onmouseout="start();">From Our Content For Distance Learning From Our Content For
+          Distance Learning</marquee>
+      </h3>
+      <div class="carousel-item active">
+        <img src="{% static 'images/s1.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/s2.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/s3.jpg' %}" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div class="row mt-2">
+    <div class="col-sm-3 p-4" style="background-color:rgb(151, 146, 141); min-height:600px; ">
+      <div style="text-align: center;">
+        <img src="{% static 'images/11.png' %}">
+      </div>
+      <p><b>Nalanda Open University is a State Open University duly established under the Act of Bihar Government and is
+        also recognized by Distance Education Council, IGNOU, Maidan Garhi, New Delhi.</b></p>
+      <h2><i class="fa-regular fa-envelope fa-beat-fade" style="color: #d20f3f;"></i> Announcement </h2>
+      <h4>
+        <marquee behavior="left" scrollamount="10" onmouseover="stop();" onmouseout="start();">
+          <p><b>Addmission open for 2023-2024</b></p>
+          <p>..............</p>
+          <p>........</p>
+          <p>................</p>
+          <p>.......</p>
+        </marquee>
+      </h4>
+    </div>
+    <div class="col-sm-9" style="background-color: grey; min-height: 600px;">
+      {% block main %}
+
+      {% endblock main %}
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-3" style="background-color: black;color:white; min-height: 250px;">
+        <div>
+          <div style="text-align: center;">
+
+            <img src="{% static 'images/11.png' %}">
+          </div>
+
+          <p>Nalanda Open University is a State Open University duly established under the Act of Bihar Government and
+            is also recognized by Distance Education Council, IGNOU, Maidan Garhi, New Delhi.</p>
+        </div>
+      </div>
+      <div class="col-sm-3 list" style="background-color: black;color:white;min-height: 250px;">
+        <h3>Useful Links</h3>
+        <span class="animate-border border-black mb-4"></span>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About Portal</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Contact us</a>
+          </li>
+          <li>
+            <a href="#">Courses</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-sm-3" style="background-color: black;color: white; min-height: 250px;">
+        <h3>Contact info</h3>
+        <span class="animate-border border-black mb-4"></span>
+        <h3 class="con-info-add"><i class="bi bi-geo-alt-fill"></i> NOU</h3>
+        <p>2nd/3rd Floor, Biscomaun Bhawan, Gandhi Maidan, Patna 800 001 (BIHAR).</p>
+        <br>
+        <h3 class="con-info-add"><i class="fa fa-volume-control-phone"></i> +91 7080102007</h3>
+        <p>Give us a call</p>
+
+      </div>
+      <div class="col-sm-3 icon" style="background-color: black;color:white; min-height: 250px;">
+        <h3>Subscribe</h3>
+        <span class="animate-border border-black mb-4"></span>
+        <p>Fill the detail below to receive the manual of the NOU e-Gyan Portal </p>
+        <form action="#">
+          <div class="form-row">
+            <div class="col dk-footer-form">
+              <input type="email" class="form-control" placeholder="Email Address">
+              <div class="row mt-4">
+                <div class="col-sm-4 " style="text-align: center;">
+                  <a href="https://www.youtube.com" class="text-decoration-none text-white"> <i class="bi bi-youtube fs-1 " ></i></a>
+
+                </div>
+                <div class="col-sm-4 " style="text-align: center;">
+                  <a href="https://www.instagram.com/" class="text-decoration-none text-white"><i class="bi bi-instagram fs-1"></i> </a>
+
+                </div>
+                <div class="col-sm-4 " style="text-align: center;">
+                  <a href="https://www.facebook.com/" class="text-decoration-none text-white"> <i class="bi bi-facebook fs-1"></i> </a>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </div>
+
+      <div class="col-sm-12" style="text-align: center;background-color: rgb(45, 44, 44);color:white; height:40px;">
+        <marquee onmouseover="stop();" onmouseout="start();">
+          <p>Copyright &copy:<u><b>To ABC. xyz</b></u>&nbsp;&nbsp;&nbsp;Developed by :-<u><b>Rahul
+                Tiwari</b></u>&nbsp;&nbsp;&nbsp;Mob:-<a
+              href="tel:+918318561647">tel:<b>+918318561647</b></a>&nbsp;&nbsp;&nbsp;E-mail:-<a
+              href="mailto:rt691343@gmail.com"><u><b>rt691343@gmail.com</b></u></a></u></p>
+        </marquee>
+      </div>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+{% extends "parent.html" %}
+{% load static %}
+{% block main %}
+  <h1 style="text-align: center;"><b><u>:-) Home Page  (-:</u></b></h1>
+  <div class="row py-5 imgra mb-3" style="height: 250px;">
+    <div class="col-3">
+      <div class=""><img src="{% static 'images/krishna.jpg' %}" height="150px" width="250"></div>
+      <p style="text-align: center; color: black;"><b>Prof. (Dr.) K. C. Sinha</b></br>VICE CHANCELLOR</p>
+    </div>
+
+    <div class="col-3" mt-5>
+      <img src="{% static 'images/Sanjoy.jpg' %}" height="150px" width="250">
+      <p style="text-align: center; color: black;" style="text-align: center;"><b>Prof. (Dr.) Sanjoy Kumar</b></br>PRO VICE CHANCELLOR</p>
+    </div>
+
+    <div class="col-3">
+      <img src="{% static 'images/habibur.jpg' %}" height="150px" width="250">
+    <p style="text-align: center; color: black;"><b>Dr. Md. Habibur Rahman</b>REGISTRAR</p>
+    </div>
+
+    <div class="col-3">
+      <img src="{% static 'images/neelam.jpg' %}" height="150px" width="250">
+      <p style="text-align: center; color: black;"><b>Dr.Neelam Kumari</b>REGISTRAR (Exam)</p>
+    </div>
+     </div>
+
+  <div class="row mt-5 imgra" style="height: 250px;">
+    <div class="col-3">
+      <img src="{% static 'images/rajendra.jpg' %}" height="150px" width="250">
+      <p style="text-align: center; color: black;"><b>Sh Rajendra vishwanath</b>CHANCL</p>
+    </div>
+    <div class="col-3">
+      <img src="{% static 'images/s1.jpg' %}" height="150px" width="250">
+      <p style="text-align: center; color: black;">MANAGING DIERECTOR</p>
+    </div>
+    <div class="col-3">
+      <img src="{% static 'images/s2.jpg' %}" height="150px" width="250">
+      <p style="text-align: center; color: black;">MANAGING DIERECTOR</p>
+    </div>
+    <div class="col-3">
+      <img src="{% static 'images/s3.jpg' %}" height="150px" width="250">
+      <p style="text-align: center; color: black;">MANAGING DIERECTOR</p>
+    </div>
+  </div>
+{% endblock main %}

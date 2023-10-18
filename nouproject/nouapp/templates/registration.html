@@ -1,0 +1,200 @@
+{% extends "parent.html" %}
+{% block main %}
+<script>
+function validate()
+{
+  var rollno=document.getElementById("rollno");
+  var name=document.getElementById("name")
+  var fname=document.getElementById("fname")
+  var mname=document.getElementById("mname")
+  var contactno=document.getElementById("contactno")
+  var emailaddress=document.getElementById("emailaddress")
+  var password=document.getElementById("password")
+  var confirmpassword=document.getElementById("confirmpassword")
+  var emailexp=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if(rollno.value=="" || rollno.value==null)
+  {
+    alert('please enter rollno');
+    rollno.focus();
+  }
+  else if(name.value=="" || name.value==null)
+  {
+    alert('please enter name');
+    name.focus();
+  }
+  else if(fname.value=="" || fname.value==null)
+  {
+    alert('please enter father name');
+    fname.focus();
+  }
+  else if(mname.value== "" || mname.value==null)
+  {
+    alert('please enter mother name');
+    mname.focus();
+  }
+  else if(contactno.value=="" || contactno.value==null)
+  {
+    alert('please enter contact no');
+    contactno.focus();
+  }
+  else if(isNaN(contactno.value))
+  {
+    alert('please enter a number in contact no');
+    contactno.focus();
+  }
+  else if(contactno.value.length!=10)
+  {
+    alert('please enter 10 digit for contact no');
+    contactno.focus();
+  }
+  else if(emailaddress.value== "" || emailaddress.value==null)
+  {
+    alert('please enter emailaddress');
+    emailaddress.focus();
+  }
+  else if(!emailexp.test(emailaddress.value))
+  {
+    alert('please enter valid emailaddress');
+    emailaddress.focus();
+  }
+  else if(password.value=="" || password.value==null)
+  {
+    alert('please enter password');
+    password.focus();
+  }
+  else if(password.value.length<8)
+  {
+    alert('please enter atlist 8charecter');
+    password.focus();
+  }
+  else if(confirmpassword.value=="" || confirmpassword.value==null)
+  {
+    alert('please enter confirmpassword');
+    confirmpassword.focus();
+  }
+  else if(confirmpassword.value!=password.value)
+  {
+    alert('confirm password is not matched');
+    confirmpassword.focus();
+  }
+  else 
+  {
+    document.getElementById("frmregistration").submit();
+  }
+}
+</script>
+
+{% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+{% endif %}
+  <h1 style="text-align: center;">Student registration form</h1>
+  <form class="form-group" id="frmregistration" method="post" onsubmit="event.preventDefault();validate();" action="{% url 'nouapp:registration' %}">
+    {% csrf_token %}
+    <table class="table" style="width: 80%; margin:auto;">
+      <tr>
+        <td>Enter roll No</td>
+        <td>
+          <input type="number" name="rollno" class="form-control" id="rollno" />
+        </td>
+      </tr>
+      <tr>
+        <td>Enter Name</td>
+        <td>
+          <Input type="text" name="name" class="form-control" id="name"/>
+        </td>
+      </tr>
+      </tr>
+      <tr>
+        <td>Enter Father Name</td>
+        <td>
+          <Input type="text" name="fname" class="form-control" id="fname"/>
+        </td>
+      <tr>
+        <td>Enter Mother Name</td>
+        <td>
+          <Input type="text" name="mname" class="form-control" id="mname"/>
+        </td>
+      </tr>
+      <tr>
+        <td>Select Gender</td>
+        <td>
+          <input type="radio" name="gender" value="Male" class="form-check-input"/>Male
+          <input type="radio" name="gender" value="femal" class="form-check-input"/>Female
+        </td>
+      </tr>
+      <tr>
+        <td>Enter address</td>
+        <td>
+          <textarea name="address" class="form-control"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td>Select Program</td>
+        <td>
+          <select name="program" class="form-control">
+            <option>-select program-</option>
+            {% for p in program %}
+              <option value="{{p.program}}">{{p.program}}</option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Select Branch</td>
+        <td>
+          <select name="branch" class="form-control">
+          <option selected>-select Branch-</option>
+          {% for b in branch %}
+            <option value="{{b.branch}}">{{b.branch}}</option>
+          {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Select Year</td>
+        <td>
+          <select name="year" class="form-control">
+          <option selected>-select Year-</option>
+          {% for y in year %}
+              <option value="{{y.year}}">{{y.year}}</option>
+          {% endfor %}
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Enter Contact No</td>
+        <td>
+          <input type="number" name="contactno" class="form-control" id="contactno"/>
+        </td>
+      </tr>
+      <tr>
+        <td>Email Address</td>
+        <td>
+          <input type="text" name="emailaddress" class="form-control" id="emailaddress"/>
+        </td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td>
+          <input type="password" name="password" class="form-control" id="password">
+        </td>
+      </tr>
+      <tr>
+        <td>Confirm Password</td>
+        <td>
+          <input type="password" name="confirm password" class="form-control" id="confirmpassword">
+        </td>
+      </tr>
+      <td>&nbsp;</td>
+        <td>
+          <button type="submit" class="btn btn-danger">Register</button>
+        </td>
+      </tr>
+    </table>
+  </form>   
+{% endblock main %}

@@ -1,0 +1,49 @@
+{% extends "studentparent.html" %}
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12">
+            {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+{% endif %}
+            <h1 style="text-align:center;">Submit your feedback/complain</h1>   
+             <form class="form-group" action="{% url 'studentapp:response' %}" method="post">
+                {% csrf_token %}
+                <table class="table table-bordered" style="margin: auto; width:80%;">
+                    <td>
+                        Select Response type
+                    </td>
+                    <td>
+                        <select name="responsetype" class="form-control" style="color: white;">
+                           <option selected>Select response</option>
+                           <option value="complain">Complain</option>
+                           <option value="feedback">Feedback</option>
+                        </select>
+                    </td>
+                    <tr>
+                        <td>select subject</td>
+                        <td>
+                            <input type="text" name="subject" class="form-control" style="color: white;">
+                        </td>
+                        <tr>
+                            <td>Enter Response</td>
+                            <td><textarea name="responsetext" class="form-control" style="color: white;"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>
+                                <center><button type="submit" class="btn-primary fs-3">submit</button></center>
+                            </td>
+                        </tr>
+                    </tr>
+                </table>
+
+             </form>
+        </div>
+    </div>
+{% endblock body %}
+
